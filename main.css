@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  min-height: 100%;
+  color: #FFF;
+}
+
+body {
+  background: #FAFBFC;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  background: #24292E;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.timeline {
+  background: ;
+  position: relative;
+  margin: ;
+  /*padding: 40px 0;*/
+  background: #2B3137;
+  width: 1000px;
+
+}
+
+li {
+  background: ;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  min-height: 100%;
+  background: #1C2024;
+}
+
+.timeline ul {
+ min-height: 100%;
+}
+
+.timeline ul li {
+  list-style: none;
+  line-height: normal;
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+}
+
+.timeline ul li:nth-child(odd) {
+  float: left;
+  text-align: right;
+  clear: both;
+}
+
+.timeline ul li:nth-child(even) {
+  float: right;
+  text-align: left;
+  clear: both;
+}
+
+.timeline ul li:nth-child(even):before {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  background: #FFF;
+  border-radius: 50%;
+}
+
+.timeline ul li:nth-child(odd):before {
+  content: "";
+  position: absolute;
+  top: 45%;
+  right: -6px;
+  width: 10px;
+  height: 10px;
+  background: #FFF;
+  border-radius: 50%;
+}
+
+.timeline, .wrap {
+  background: ;
+  min-height: 100%;
+}
+
+a {
+  color: white;
+}
+
+li {
+  display: flex;
+  background: #333333;
+  border-radius: 50px;
+
+}
+
+.icon {
+  width: 30px;
+}
+
+input[type="text"] {
+  background: red !important;
+}
+
+input, button {
+  border: none;
+  height: 20px;
+}
