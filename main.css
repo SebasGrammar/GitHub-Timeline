@@ -111,7 +111,7 @@ a {
 
 li {
   display: flex;
-  background: #333333;
+  background: ;
   border-radius: 50px;
 
 }
@@ -120,11 +120,26 @@ li {
   width: 30px;
 }
 
-input[type="text"] {
-  
-}
-
 input, button {
   border: none;
   height: 20px;
+}
+
+.user-info {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: ;
+  background: #21262C;
+}
+
+.avatar {
+  width: 75px;
+  margin-right: 20px;
+}
+
+.profile-info {
+  display: flex;
+
 }

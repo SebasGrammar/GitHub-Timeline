@@ -7,6 +7,7 @@ let username = document.querySelector("#username")
 //let timeline = document.querySelector(".timeline")
 let timeline = document.querySelector(".wrap")
 
+let userInfo = document.querySelector(".user-info")
 
 function getUsername() {
   console.log(username.value)
@@ -17,6 +18,7 @@ function cleanScreen() {
   while (timeline.firstChild) {
     timeline.firstChild.remove();
   }
+  userInfo.firstChild.remove()
 }
 
 function component(property, text, rName) {
@@ -59,8 +61,40 @@ async function retrieveData(username) {
   cleanScreen()
 
   let data = await fetch(`https://api.github.com/users/${getUsername()}/repos`)
+  let userProfile = await fetch(`https://api.github.com/users/${getUsername()}`)
+  //let userProfile = await fetch(`https://api.github.com/users/patilankita79`)
+  //https://api.github.com/users/patilankita79
   let test = await data.json()
+  let profile = await userProfile.json()
 
+  let lol = document.createElement("div")
+  lol.className = "profile-info"
+
+  let oe = document.createElement("div")
+  let nickname = document.createElement("h3")
+  let location = document.createElement("p")
+  location.textContent = profile.location
+  nickname.textContent = profile.login
+  let pic = document.createElement("img")
+  pic.setAttribute("src", `${profile.avatar_url}`)
+
+  let userLink = document.createElement("a")
+  userLink.textContent = "Visit profile"
+  userLink.setAttribute("href", profile.html_url)
+
+  console.log(userLink)
+  
+  lol.appendChild(pic)
+  oe.appendChild(nickname)
+  
+  oe.appendChild(location)
+  oe.appendChild(userLink)
+  //lol.appendChild(nickname)
+  //lol.appendChild(location)
+  lol.appendChild(oe)
+  pic.className = "avatar"
+  userInfo.appendChild(lol)
+  
   test.sort((a, b) => {
     let dateA = new Date(a.created_at),
       dateB = new Date(b.created_at);
@@ -70,6 +104,7 @@ async function retrieveData(username) {
   let array = []
 
   console.log(test)
+  console.log(profile)
 
   test.forEach(repository => {
     console.log(repository.created_at)
